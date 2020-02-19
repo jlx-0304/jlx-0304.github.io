@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Hexo</title>
+  <title>配置MySQL | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  <meta name="description" content="记录背景今年这个年过得确实特别，刚放假的时候还好好的，回家没几天武汉就传出了肺炎疫情，从消息传出到武汉封城，再到全国范围的管控，事态的发展远远超出了我的预期，甚至刚传出疫情的消息时，我还在计划着和同学的聚餐吃火锅还是大菜；大年初一到初三在老家过的还算自在，全家难得聚这么齐，那几天县城传出了已经有武汉返乡人员感染了新冠肺炎，我们就打消了返回县城的打算，隔几天就去县城采购食物顺带洗个澡就继续回乡下，管">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置MySQL">
+<meta property="og:url" content="http://yoursite.com/2020/02/18/%E9%85%8D%E7%BD%AEMySQL/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="记录背景今年这个年过得确实特别，刚放假的时候还好好的，回家没几天武汉就传出了肺炎疫情，从消息传出到武汉封城，再到全国范围的管控，事态的发展远远超出了我的预期，甚至刚传出疫情的消息时，我还在计划着和同学的聚餐吃火锅还是大菜；大年初一到初三在老家过的还算自在，全家难得聚这么齐，那几天县城传出了已经有武汉返乡人员感染了新冠肺炎，我们就打消了返回县城的打算，隔几天就去县城采购食物顺带洗个澡就继续回乡下，管">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-18T04:54:00.000Z">
+<meta property="article:modified_time" content="2020-02-19T10:03:15.638Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,103 +154,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-配置MySQL" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      配置MySQL
+    </h1>
+  
+
+        
+        <a href="/2020/02/18/%E9%85%8D%E7%BD%AEMySQL/" class="archive-article-date">
+  	<time datetime="2020-02-18T04:54:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="记录背景"><a href="#记录背景" class="headerlink" title="记录背景"></a>记录背景</h1><pre><code>今年这个年过得确实特别，刚放假的时候还好好的，回家没几天武汉就传出了肺炎疫情，从消息传出到武汉封城，再到全国范围的管控，事态的发展远远超出了我的预期，甚至刚传出疫情的消息时，我还在计划着和同学的聚餐吃火锅还是大菜；大年初一到初三在老家过的还算自在，全家难得聚这么齐，那几天县城传出了已经有武汉返乡人员感染了新冠肺炎，我们就打消了返回县城的打算，隔几天就去县城采购食物顺带洗个澡就继续回乡下，管控力度一天比一天强，从通知禁止外村人进入，限制本村人出行到村口派人值班登记出入人员，小区入驻政府人员，再到禁止汽车入村，只出不进；老哥的在北京的工作也因为疫情的原因推迟，改为在家办公，而我也延迟开学，目前在学校安排的平台上接收网上授课，不知何时才能开学</code></pre><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><pre><code>数据库系统是这学期新开的一门专业课，目前对这门课程的理解有限，就先不做介绍了等以后有一定理解后再补充，在正式开课前老师给了我们两个压缩包一个是MySQL，另一个是可视化MySQL的一个工具，安装比较简单，主要就是安装完之后需要为MySQL配置环境变量，因为之前配置过JDK，在自建博客的时候也被魔鬼般的配置环境变量折磨过，所以这次并没有遇到太大的困难，但是好多之前没有配置过的同学碰到了各种各样的错误，所以就打算借此机会更新一篇关于如何配置MySQL的博客，希望可以帮助到现在还没配好的同学；</code></pre><a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="在开始一切之前-你必须已经"><a href="#在开始一切之前-你必须已经" class="headerlink" title="在开始一切之前,你必须已经:"></a>在开始一切之前,你必须已经:</h3><pre><code>1. 从官网下载合适版本的MySQl;
+2. 了解如何用管理员打开cmd;
+3. 掌握基本的linux命令;</code></pre><h3 id="本文所使用的环境"><a href="#本文所使用的环境" class="headerlink" title="本文所使用的环境:"></a>本文所使用的环境:</h3><pre><code>- windows10.0
+- MySQL 5.7.22</code></pre><h2 id="解压MySQL"><a href="#解压MySQL" class="headerlink" title="解压MySQL"></a>解压MySQL</h2><pre><code>1. 将 MySQL 压缩包解压到自己想要的位置，小白建议默认路径
+2. 与 mysql 5.6 不同的是 5.7 版本中没有 data 文件夹和my-default.ini 文件  </code></pre><h2 id="配置my-ini"><a href="#配置my-ini" class="headerlink" title="配置my.ini"></a>配置my.ini</h2><pre><code>1. my.ini 是 MySQL 数据库中使用的配置文件，修改这个文件可以达到更新配置的目的
+2. 在 ..\mysql-5.7.22-winx64 下，新建 my.ini 文件，文件内容为：
+
+[mysql] 
+default-character-set=utf8 # 设置 mysql 客户端默认字符集 
+[mysqld] 
+port = 3306 #设置 3306 端口
+basedir=F:\devtools\mysql-5.7.22-winx64 # 设置 mysql 的安装目录 
+datadir=F:\devtools\mysql-5.7.22-winx64\data # 设置 mysql 数据库的数据的存放目录
+max_connections=200 # 允许最大连接数
+character-set-server=utf8 # 服务端使用的字符集默认为 8 比特编码的 latin1 字符集
+default-storage-engine=INNODB # 创建新表时将使用的默认存储引擎</code></pre><h2 id="安装-mysql-服务"><a href="#安装-mysql-服务" class="headerlink" title="安装 mysql 服务"></a>安装 mysql 服务</h2><pre><code>1. 以管理员身份打开 cmd 窗口，将目录切换到 mysql 安装文件夹下的 bin 目录下
+2. 执行 mysqld install</code></pre><h2 id="初始化-mysql-数据库"><a href="#初始化-mysql-数据库" class="headerlink" title="初始化 mysql 数据库"></a>初始化 mysql 数据库</h2><pre><code>1. bin 目录下，输入 mysqld --initialize --user=root --console
+2. 找到提示语句中的locallhost：*****,信号内容为root用户的密码</code></pre><h2 id="启动-mysql-服务"><a href="#启动-mysql-服务" class="headerlink" title="启动 mysql 服务"></a>启动 mysql 服务</h2><pre><code>1. bin 目录下，net start mysql 启动服务</code></pre><h2 id="修改-root-密码"><a href="#修改-root-密码" class="headerlink" title="修改 root 密码"></a>修改 root 密码</h2><pre><code>1. bin 目录下，mysql -uroot -p，输入初始化 root 密码登录
+2. 然后通过 set password=password(&apos;123456&apos;); 修改密码</code></pre><h2 id="安装-Navicat-Premium"><a href="#安装-Navicat-Premium" class="headerlink" title="安装 Navicat Premium"></a>安装 Navicat Premium</h2><pre><code>1. navicat 是一个用来可视化MySQL的工具</code></pre><h2 id="卸载-用于安装失败，需要重新安装时"><a href="#卸载-用于安装失败，需要重新安装时" class="headerlink" title="卸载[用于安装失败，需要重新安装时]"></a>卸载[用于安装失败，需要重新安装时]</h2><pre><code>1. 关闭服务,以管理员身份运行 cmd，执行命令： net stop mysql
+2. 移除服务,mysqld -remove [服务名]
+3. 删除文件
+4. 清除注册表中的该 MySQL 服务，如下:
+    a、HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\MySQL 
+    b、HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\MySQL 
+    c、HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\MySQL</code></pre><h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><pre><code>1. 新建 my.ini 文件失败
+
+   解决办法： 在创建 my.ini 文件时，创建好后，点击创建的 my.ini 文件，点击文件→选项→查看，然后把其中的隐藏已知文件类型的扩展名取消勾选，然后再将文件重命名更改扩展名
+
+2. 执行 mysqld install 出现 The service already exists!
+
+    解决办法：重新以管理员身份运行 cmd，先输入sc query mysql 回车，在输入 sc delete mysql 回车，然后重新执行 mysqld install
+
+3. 执行 mysqld --initialize --user=root –console 步骤时，若出现 [ERROR]Can&apos;t find error-message file D:\**\mysql
+
+    解决办法：重新配置 my.ini 文件将 basedir 后的路径改为 mysql 的安装路径，datadir 后为数据库的数据存放目录，设置在 mysql 安装目录下[注意配置后记得回头检查下配置内容格式是否正确，尤其是记得将注释内容放到#号后面，并且是在同一行，不能换行！！！]
+
+ 4. 执行 mysqld --initialize --user=root –console 步骤时，若出现 [ERROR]--initialize specified but the data directory has files in it.Aborting.
+
+    解决办法：找到 mysql 安装目录下存放数据库数据的 data 文件夹，删除里面的内容，保留文件夹
+
+5. 执行 net start mysql 步骤时，若出现
+    MySQL 服务正在启动
+    MySQL 服务无法启动。
+
+    服务没有报告任何错误。
+
+    解决办法：删除data文件夹[就是上文的data]，重新以管理员身份运行 cmd，从第一步开始配置。
+
+6. 执行 行 mysql -uroot -p 步骤后，root密码输入错误，出现 You have an error in your SQL syntax;
+
+    解决办法：连续回车回车两次，继续输入密码。
+
+7. 安装过程出现
+    由于找不到MSVCR120.dll，无法继续执行代码，重新安装重新可能会解决此问题
+
+    解决办法: https://www.microsoft.com/zh-cn/download/confirmation.aspx?id=40784,到此网站下载组件</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/07/hexo%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2019-09-07T12:46:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/07/hexo%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/">hexo主题优化</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/%E9%85%8D%E7%BD%AEMySQL/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/05/%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2019-09-05T15:20:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/20/%E8%B5%AB%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">赫夫曼编码的实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/05/%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96/">结构体数组的初始化</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/03/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2019-09-03T09:58:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/03/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">使用hexo+github搭建M免费个人博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -269,8 +381,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
