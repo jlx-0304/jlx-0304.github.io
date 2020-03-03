@@ -16,7 +16,7 @@
 <meta property="og:description" content="记录背景上次更博已经是四个月之前的事了，这次放假总算是有了点时间来更一篇博客，长时间没写，一动手突然发现连Markdown语法都忘光了，只能边看笔记边写了，到目前为止手上也有了几个像样的小项目，这次先把之前的写的基于赫夫曼树，生成赫夫曼编码的代码总结一下：">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-20T06:37:10.000Z">
-<meta property="article:modified_time" content="2020-02-19T10:02:39.633Z">
+<meta property="article:modified_time" content="2020-03-03T15:23:54.464Z">
 <meta property="article:author" content="Da Long">
 <meta name="twitter:card" content="summary">
   
@@ -172,8 +172,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="记录背景"><a href="#记录背景" class="headerlink" title="记录背景"></a>记录背景</h1><pre><code>上次更博已经是四个月之前的事了，这次放假总算是有了点时间来更一篇博客，长时间没写，一动手突然发现连Markdown语法都忘光了，只能边看笔记边写了，到目前为止手上也有了几个像样的小项目，这次先把之前的写的基于赫夫曼树，生成赫夫曼编码的代码总结一下：</code></pre><a id="more"></a>
-<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><pre><code>这学期新开的数据结构让我接触到了不少简单的算法，因为课时有限，好多算法我们并没有要求实现代码，只要掌握算法含义即可，但是这也是不得以而为之，有空还是得将代码实现出来，这样才能将知识吸收，本文中的赫夫曼树的算法是课本中的经典算法，课本中已经将核心思路的伪代码给出，我只需要在完全理解算法的基础上将代码补齐就OK了;
+        <h2 id="记录背景"><a href="#记录背景" class="headerlink" title="记录背景"></a>记录背景</h2><pre><code>上次更博已经是四个月之前的事了，这次放假总算是有了点时间来更一篇博客，长时间没写，一动手突然发现连Markdown语法都忘光了，只能边看笔记边写了，到目前为止手上也有了几个像样的小项目，这次先把之前的写的基于赫夫曼树，生成赫夫曼编码的代码总结一下：</code></pre><a id="more"></a>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><pre><code>这学期新开的数据结构让我接触到了不少简单的算法，因为课时有限，好多算法我们并没有要求实现代码，只要掌握算法含义即可，但是这也是不得以而为之，有空还是得将代码实现出来，这样才能将知识吸收，本文中的赫夫曼树的算法是课本中的经典算法，课本中已经将核心思路的伪代码给出，我只需要在完全理解算法的基础上将代码补齐就OK了;
 
 代码:
 #include&lt;stdio.h&gt;
@@ -292,7 +292,7 @@ void main()
     for (int i = 1; i &lt;= n; i++)
         printf(&quot;权值为%d的结点的赫夫曼编码为：%s\n&quot;, HT[i].weight, HC[i]);
     system(&quot;pause&quot;); 
-}</code></pre><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><pre><code>在对结构体数组初始化数值时遵循以下格式:
+}</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><pre><code>在对结构体数组初始化数值时遵循以下格式:
 strcut xx
 {    int xx;
     char xx[];
